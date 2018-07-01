@@ -60,6 +60,23 @@ var loadPayStack = function(
       $('#cast_btn').text('Cast Vote');
       $('#cast_btn').removeAttr('disabled');
       toastr.success('Alert!', 'Successfully casted vote', { timeOut: 5000 });
+      // /vote/${reference}?username=${username}&voteCount=${voteCount}
+      $.ajax({
+        url:
+          'https://service.soundit.africa/api/vote/' +
+          response.reference +
+          '?username=' +
+          username +
+          '&voteCount=' +
+          voteCount,
+        type: 'POST',
+        success: function(data, status) {
+          console.log('done', data, status);
+        },
+        error: function(data, status) {
+          console.log('erro', data, status);
+        }
+      });
 
       $.ajax({
         url:
