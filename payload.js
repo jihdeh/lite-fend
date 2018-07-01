@@ -19,7 +19,6 @@ $(document).ready(function() {
 
     if (isNaN(+getNumberOfVotes) || +getNumberOfVotes < 1) {
       //display error
-      console.log('block');
       $('.information').text('Numbers only please');
       toastr.warning('Numbers only please');
       return;
@@ -60,18 +59,27 @@ var loadPayStack = function(
       $('#cast_btn').text('Cast Vote');
       $('#cast_btn').removeAttr('disabled');
       toastr.success('Alert!', 'Successfully casted vote', { timeOut: 5000 });
-      $.post(
-        'https://hooks.slack.com/services/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',
-        {
-          text: 'Lite Someone voted for' + username + ' with' + voteCount,
-          channel: '#soundit',
-          username: 'New Vote - Lite',
-          icon_emoji: ':incoming_envelope:'
+
+      $.ajax({
+        url:
+          'https://service.soundit.africa/api/notify?username=' +
+          username +
+          '&voteCount=' +
+          voteCount,
+        type: 'POST',
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json',
+        data: JSON.stringify({
+          title: 'Lite Vote',
+          text: 'Lite Someone voted for' + username + ' with' + voteCount
+        }),
+        success: function(data, status) {
+          // console.log('done', data, status);
         },
-        function(data, status) {
-          console.log('done', data, status);
+        error: function(data, status) {
+          // console.log('erro', data, status);
         }
-      );
+      });
     },
     onClose: function() {
       alert('window closed');
@@ -85,7 +93,8 @@ var loadPayStack = function(
 var getSearchResult = function(username) {
   var defaultUsername = username || '';
   $.get(
-    'http://localhost:6500/api/searchContestant?username=' + defaultUsername,
+    'https://service.soundit.africa/api/searchContestant?username=' +
+      defaultUsername,
     function(data, status) {
       if (!data.length) {
         $('.loading').text('No Contestant found by that username');
