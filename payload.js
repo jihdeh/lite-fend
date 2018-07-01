@@ -37,7 +37,7 @@ var loadPayStack = function(
   email = 'vote@soundit.africa'
 ) {
   var handler = window.PaystackPop.setup({
-    key: 'pk_test_2f18b792a4e8f36bb7a5bcba1bd2e8d68add7603',
+    key: 'pk_live_63724e28f7e786cee59b25add191e744f6204f8e',
     email: 'vote@soundit.africa',
     amount: 5000 * Number(voteCount), //in kobo
     ref: '' + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
