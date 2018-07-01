@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Is an online singing competition with an aim of leveraging on the simplicity of the Digital Media to discover and showcase new talents across Africa hence cutting loads of protocols to give these talents an easily way to be heard across Africa and Around the world.">
+    <meta name="keywords" content="A gospel reality tv show,showcase talent,promote talents,finds raw talents,Singing competition,Gospel competition, SoundIT, Sound it, Talent promotions, Youths talent hunt,Christian competition, Christian Youths, Nigeria, Lagos, Nigeria, Singing, Events, Africa" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta property="og:title" content="Sound IT Africa" />
+    <meta property="og:type" content="Gospel Talent Show" />
+    <meta property="og:url" content="https://www.soundit.africa/" />
+    <meta property="og:image" content="https://www.soundit.africa/images/logo.webp?v=0.0.2" />
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic|Raleway?v=0.0.2" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css?v=0.0.2" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=0.0.2">
+    <link rel="stylesheet" href="/css/custom.css?v=0.0.1">
+    <title>SoundIT Africa Lite</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div class="container-fluid search-container">
+      <div class="page-container">
+        <header class="text-center">
+          <h1>Sound IT Africa Lite</h1>
+          <h5>This is a lightweight version to vote easily for your favourite contestant</h5>
+        </header>
+        <section>
+          <form
+            id="search"
+            class="contestant-container__form"
+          >
+            <span class="username--cont">
+              <input
+                class="usernameInput searchInput"
+                type="text"
+                placeholder="Search by username"
+                required
+              />
+              <button type="submit" class="search-input__button">
+                <span class="searchpage-icon">Search</span>
+              </button>
+            </span>
+          </form>
+        </section>
+        <section>
+          <p class="loading hide_something text-center">..loading</p>
+          <div id="displayResult" class="row"></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="voteModal" tabindex="-1" role="dialog" aria-labelledby="voteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="voteModalLabel">Vote for <span id="contestantUsername"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p><small>Please note, each vote cost N50 i.e 1 vote = N50.</small></p>
+            <h4>Please enter number of votes in the input below</h4>
+            <div class="form-group">
+              <input
+                class="form-control"
+                id="numberOfVotes_input"
+                type="number"
+                placeholder="Enter number of votes"
+                required
+              />
+            </div>
+            <p class="information"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="cast_btn">Cast Vote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js?v=0.0.2" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js?v=0.0.2" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=0.0.1" defer async></script>
+    <script src="./payload.js"></script>
+    <!-- end scripts -->
+  </body>
+</html>
