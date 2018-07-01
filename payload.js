@@ -11,7 +11,8 @@ $(document).ready(function() {
     $('#contestantUsername').text(getUsername);
   });
 
-  $('#cast_btn').on('click', function() {
+  $('#cast_btn').on('click', function(event) {
+    event.preventDefault();
     var getUsername = $('.theUsername').text();
     var getNumberOfVotes = $('#numberOfVotes_input')
       .val()
