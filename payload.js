@@ -139,7 +139,7 @@ var constructHtmlResult = function(contestant) {
   return (
     '<div class="col-sm-6 col-md-4 col-lg-3"><div class="col-contestant-result">' +
     '<iframe width="100%" height="200px" src="' +
-    contestant.contestantVideo[0] +
+    contestant.qualifiedVideo[0] +
     '" title="Contestant video" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen />' +
     '<p class="col-contestant-result-name"> Name: <span class="col-contestant-result__right"> ' +
     contestant.firstName +
